@@ -30,6 +30,7 @@ def entropy(labels: list) -> float:
     ratios = labelOccurrenceRatios(labels)
     entropy = 0.0
     for ratio in ratios.values():
-        entropy += ratio - log2(ratio)
+        entropy += ratio * log2(ratio)
     entropy *= -1
-    return entropy
+    entropy_rounded = round(entropy, 4)
+    return entropy_rounded
