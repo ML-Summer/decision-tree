@@ -11,10 +11,10 @@ def labelOccurrenceRatios(labels: list) -> dict:
     - input: [1, 1, 0]
     - output: {1: 0.6666..., 0: 0.3333...}
     """
-    ratios = {}
+    ratios = {label: 0 for label in labels}
     amount_of_all_labels = len(labels)
     for label in labels:
-        ratios[label] += 1
+        ratios[label] = ratios[label] + 1
     for label in ratios.keys():
         ratios[label] /= amount_of_all_labels
     return ratios
