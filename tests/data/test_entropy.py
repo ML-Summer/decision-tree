@@ -1,6 +1,6 @@
 import pytest
 from pytest import approx
-from data.entropy import entropy
+from src.data.entropy import entropy
 
 class TestEntropy():
     def testOnThreeToTwoSplit(self):
