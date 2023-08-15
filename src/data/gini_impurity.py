@@ -37,3 +37,5 @@ def show_Gini_for_each_feature(df):
         print(f'Gini impurity for {column}: {gini_value}')
 
 print(show_Gini_for_each_feature(df))
+
+print(Gini_impurity(sample_df['Height']))
