@@ -6,7 +6,7 @@ from data.gini_impurity import *
 
 class TestGiniImpurity:
     def test_convert_file_to_pd_df(self):
-        csv_file = '/Users/annamariabugaj/PycharmProjects/decision-tree/src/data/sample_data.csv'
+        csv_file = './src/data/sample_data.csv'
         df = convert_file_to_pd_df(csv_file)
         assert isinstance(df, pd.DataFrame), "Returned object is not a DataFrame."
 
@@ -16,7 +16,7 @@ class TestGiniImpurity:
             Gini_impurity([1, 2, 3, 4, 5])
 
     def test_Gini_impurity_valid_input(self):
-        csv_path = '/Users/annamariabugaj/PycharmProjects/decision-tree/src/data/sample_data.csv'
+        csv_path = './src/data/sample_data.csv'
         df = pd.read_csv(csv_path)
         feature = df['Gender']
         gini = Gini_impurity(feature)

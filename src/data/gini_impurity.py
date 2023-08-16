@@ -10,14 +10,14 @@ def convert_file_to_pd_df(filepath):
     return df
 
 
-filepath = '/Users/annamariabugaj/PycharmProjects/decision-tree/src/data/mice.csv'
+filepath = './src/data/mice.csv'
 df = convert_file_to_pd_df(filepath)
 
 df['target'] = (df.Index >= 4).astype('int')
 df.drop('Index', axis=1, inplace=True)
 
 sample_df = df.head(16)
-sample_df.to_csv('/Users/annamariabugaj/PycharmProjects/decision-tree/src/data/sample_data.csv')
+sample_df.to_csv('./src/data/sample_data.csv')
 
 def Gini_impurity(feature: pd.Series):
     '''
