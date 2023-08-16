@@ -31,11 +31,12 @@ def Gini_impurity(feature: pd.Series):
     # if object is not a pd. Series raise Error-message
     else:
         raise ('Object must be a Pandas Series.')
-def show_Gini_for_each_feature(df):
-    for column in df.columns[:-1]:
-        gini_value = Gini_impurity(df[column])
-        print(f'Gini impurity for {column}: {gini_value}')
 
-print(show_Gini_for_each_feature(df))
+# def show_Gini_for_each_feature(df):
+#     for column in df.columns[:-1]:
+#         gini_value = Gini_impurity(df[column])
+#         print(f'Gini impurity for {column}: {gini_value}')
+#
+# print(show_Gini_for_each_feature(df))
 
-print(Gini_impurity(sample_df['Height']))
+print(Gini_impurity(sample_df['Gender']))

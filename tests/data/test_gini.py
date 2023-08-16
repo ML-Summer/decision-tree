@@ -18,9 +18,9 @@ class TestGiniImpurity:
     def test_Gini_impurity_valid_input(self):
         csv_path = '/Users/annamariabugaj/PycharmProjects/decision-tree/src/data/sample_data.csv'
         df = pd.read_csv(csv_path)
-        feature = df['Height']
+        feature = df['Gender']
         gini = Gini_impurity(feature)
-        assert gini == approx(0.9140625)
+        assert gini == approx(0.46875)
 
 
 pytest.main()
