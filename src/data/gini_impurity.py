@@ -10,14 +10,8 @@ def convert_file_to_pd_df(filepath):
     return df
 
 
-filepath = './src/data/mice.csv'
-df = convert_file_to_pd_df(filepath)
 
-df['target'] = (df.Index >= 4).astype('int')
-df.drop('Index', axis=1, inplace=True)
 
-sample_df = df.head(16)
-sample_df.to_csv('./src/data/sample_data.csv')
 
 def Gini_impurity(feature: pd.Series):
     '''
@@ -38,5 +32,14 @@ def Gini_impurity(feature: pd.Series):
 #         print(f'Gini impurity for {column}: {gini_value}')
 #
 # print(show_Gini_for_each_feature(df))
+def main():
+    filepath = './src/data/mice.csv'
+    df = convert_file_to_pd_df(filepath)
+    df['target'] = (df.Index >= 4).astype('int')
+    df.drop('Index', axis=1, inplace=True)
+    sample_df = df.head(16)
+    sample_df.to_csv('./src/data/sample_data.csv')
+    print(Gini_impurity(sample_df['Gender']))
 
-print(Gini_impurity(sample_df['Gender']))
+if __name__=="__main__":
+    main()
