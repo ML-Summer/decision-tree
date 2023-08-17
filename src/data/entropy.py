@@ -1,11 +1,11 @@
 from math import log2
 from pandas import Series
 
-def labelOccurrenceRatios(labels: list) -> dict:
+def labelOccurrenceRatios(labels: Series) -> dict:
     """
     Calculates labels' occurrence ratio to the whole list size.
     # Input
-    - `labels` - a list of labels to calculate occurrence ratios from.
+    - `labels` - a `pandas.Series` object that contains labels to calculate occurrence ratios from.
     # Output
     A dictionary containing pairs `label:occurence_ratio`
     # Example
@@ -20,11 +20,11 @@ def labelOccurrenceRatios(labels: list) -> dict:
         ratios[label] /= amount_of_all_labels
     return ratios
 
-def entropy(labels: list) -> float:
+def entropy(labels: Series) -> float:
     """
     Calculates entropy(information gain) of provided feature vector.
     # Parameter
-    - `features` - a list that contains labels.
+    - `features` - a `pandas.Series` object that contains labels.
     # Output
     An entropy value in float format.
     """
