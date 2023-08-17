@@ -1,4 +1,5 @@
 from math import log2
+from pandas import Series
 
 def labelOccurrenceRatios(labels: list) -> dict:
     """
